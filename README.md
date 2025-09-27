@@ -3,6 +3,7 @@
 A comprehensive full-stack event management application built with **Laravel (Backend)** and **Next.js (Frontend)**, featuring clean architecture, robust testing, and complete API documentation.
 
 ## 📋 Table of Contents
+- [Screenshots](#-screenshots)
 - [Features](#-features)
 - [Architecture](#️-architecture)
 - [Prerequisites](#-prerequisites)
@@ -11,8 +12,29 @@ A comprehensive full-stack event management application built with **Laravel (Ba
 - [Sample API Requests](#-sample-api-requests)
 - [Database Schema](#️-database-schema)
 - [Testing](#-testing)
+- [Deployment](#-deployment)
 - [Assumptions & Design Decisions](#-assumptions--design-decisions)
 - [Bonus Features](#-bonus-features)
+
+## 📸 Screenshots
+
+### Frontend Application
+
+#### Home Page - Event Listing
+![Home Page](./event-management-system/frontend/public/home.png)
+*Main dashboard showing all upcoming events with capacity information*
+
+#### Event Details & Registration
+![Event Details](./event-management-system/frontend/public/event.png)
+*Detailed view of an event with registration form*
+
+#### Registration Form
+![Registration Form](./event-management-system/frontend/public/register.png)
+*User-friendly registration form with validation*
+
+#### Attendees Management
+![Attendees List](./event-management-system/frontend/public/attendees.png)
+*Complete list of registered attendees with search functionality*
 
 ## ✨ Features
 
@@ -443,6 +465,113 @@ php artisan test --coverage
 - ✅ Validation and error handling
 - ✅ Edge cases and boundary conditions
 - ✅ Database operations and relationships
+
+## 🚀 Deployment
+
+### Quick Deployment Options
+
+#### Option 1: Railway (Recommended - Free Tier Available)
+
+**Backend Deployment:**
+1. Create account at [Railway.app](https://railway.app)
+2. Connect your GitHub repository
+3. Create new project and select your repo
+4. Railway will auto-detect Laravel and deploy
+5. Add environment variables in Railway dashboard:
+   ```env
+   APP_ENV=production
+   APP_DEBUG=false
+   APP_KEY=base64:your_generated_key
+   DB_CONNECTION=sqlite
+   DB_DATABASE=/app/database/database.sqlite
+   ```
+
+**Frontend Deployment:**
+1. Deploy to [Vercel](https://vercel.com) (free)
+2. Connect GitHub repository
+3. Set build command: `cd frontend && npm run build`
+4. Set output directory: `frontend/.next`
+5. Add environment variable:
+   ```env
+   NEXT_PUBLIC_API_URL=https://your-railway-app.up.railway.app/api
+   ```
+
+#### Option 2: Heroku
+
+**Backend (Laravel):**
+```bash
+# Install Heroku CLI and login
+heroku create your-app-name
+heroku config:set APP_ENV=production
+heroku config:set APP_DEBUG=false
+heroku config:set APP_KEY=base64:your_key
+git subtree push --prefix=event-management-system/backend heroku main
+```
+
+**Frontend (Next.js):**
+```bash
+# Deploy to Vercel or Netlify
+npm install -g vercel
+cd frontend
+vercel --prod
+```
+
+#### Option 3: Shared Hosting
+
+**For Laravel (cPanel/Shared Hosting):**
+1. Upload backend files to public_html
+2. Move Laravel's public folder contents to root
+3. Update index.php paths
+4. Create SQLite database file
+5. Set proper file permissions (755/644)
+
+### Environment Configuration
+
+**Backend (.env for production):**
+```env
+APP_NAME="Event Management System"
+APP_ENV=production
+APP_KEY=base64:generated_key
+APP_DEBUG=false
+APP_URL=https://your-domain.com
+
+DB_CONNECTION=sqlite
+DB_DATABASE=/app/database/database.sqlite
+
+L5_SWAGGER_CONST_HOST=https://your-domain.com
+```
+
+**Frontend (.env.local for production):**
+```env
+NEXT_PUBLIC_API_URL=https://your-api-domain.com/api
+```
+
+### Database Setup for Production
+
+```bash
+# Run migrations on production
+php artisan migrate --force
+
+# Seed with sample data (optional)
+php artisan db:seed --class=SampleDataSeeder --force
+
+# Generate API documentation
+php artisan l5-swagger:generate
+```
+
+### SSL & Security
+
+1. **Enable HTTPS** (most platforms provide free SSL)
+2. **Update CORS settings** in `config/cors.php`
+3. **Set proper file permissions**
+4. **Configure rate limiting** if needed
+
+### Monitoring & Maintenance
+
+1. **Error Logging**: Check `storage/logs/laravel.log`
+2. **Database Backups**: Regular SQLite file backups
+3. **Performance**: Monitor response times
+4. **Security**: Keep dependencies updated
 
 ## 💡 Assumptions & Design Decisions
 
