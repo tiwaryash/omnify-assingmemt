@@ -1,8 +1,8 @@
-# 🎯 Mini Event Management System
+#  Mini Event Management System
 
 A comprehensive full-stack event management application built with **Laravel (Backend)** and **Next.js (Frontend)**, featuring clean architecture, robust testing, and complete API documentation.
 
-## 📋 Table of Contents
+## Table of Contents
 - [Screenshots](#-screenshots)
 - [Features](#-features)
 - [Architecture](#️-architecture)
@@ -16,7 +16,7 @@ A comprehensive full-stack event management application built with **Laravel (Ba
 - [Assumptions & Design Decisions](#-assumptions--design-decisions)
 - [Bonus Features](#-bonus-features)
 
-## 📸 Screenshots
+## Screenshots
 
 ### Frontend Application
 
@@ -36,9 +36,9 @@ A comprehensive full-stack event management application built with **Laravel (Ba
 ![Attendees List](./event-management-system/frontend/public/attendees.png)
 *Complete list of registered attendees with search functionality*
 
-## ✨ Features
+## Features
 
-### Core Requirements ✅
+### Core Requirements 
 - **Event Creation**: Create events with name, location, start_time, end_time, max_capacity
 - **Event Listing**: View all upcoming events with pagination
 - **Attendee Registration**: Register attendees with name and email validation
@@ -46,7 +46,7 @@ A comprehensive full-stack event management application built with **Laravel (Ba
 - **Duplicate Prevention**: Prevent duplicate email registrations per event
 - **Attendee Listing**: View all registered attendees for an event
 
-### Bonus Features ✅
+### Bonus Features 
 - **Pagination**: Implemented on both events and attendees lists
 - **Unit Tests**: Comprehensive test suite (70 tests, 398 assertions)
 - **Swagger Documentation**: Complete OpenAPI 3.0 documentation
@@ -54,7 +54,7 @@ A comprehensive full-stack event management application built with **Laravel (Ba
 - **Additional Endpoints**: Event updates, deletions, attendee management
 - **Real-time Validation**: Client-side and server-side validation
 
-### Technical Excellence ✅
+### Technical Excellence 
 - **Clean Architecture**: MVC pattern with service layer
 - **Separation of Concerns**: Models, Services, Controllers properly separated
 - **Input Validation**: Comprehensive validation with meaningful error messages
@@ -62,7 +62,7 @@ A comprehensive full-stack event management application built with **Laravel (Ba
 - **Database Design**: Proper relationships and constraints
 - **Code Quality**: PSR standards, meaningful naming, DRY principles
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 event-management-system/
@@ -88,7 +88,7 @@ event-management-system/
 └── README.md                        # This file
 ```
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **PHP** >= 8.2
 - **Composer** >= 2.0
@@ -96,7 +96,7 @@ event-management-system/
 - **npm** or **yarn**
 - **SQLite** (included with PHP)
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -460,13 +460,13 @@ php artisan test --coverage
 - **Pass Rate**: 100%
 
 ### Test Categories
-- ✅ Service layer business logic
-- ✅ API endpoint functionality
-- ✅ Validation and error handling
-- ✅ Edge cases and boundary conditions
-- ✅ Database operations and relationships
+- Service layer business logic
+- API endpoint functionality
+- Validation and error handling
+- Edge cases and boundary conditions
+- Database operations and relationships
 
-## 🚀 Deployment
+## Deployment
 
 ### Quick Deployment Options
 
@@ -602,9 +602,9 @@ php artisan l5-swagger:generate
 - **Transactions**: Database transactions for multi-step operations
 - **Validation**: Comprehensive input validation and sanitization
 
-## 🎁 Bonus Features
+## Bonus Features
 
-### ✅ Implemented
+### Implemented
 1. **Pagination**: Both events and attendees lists
 2. **Unit Tests**: Comprehensive test suite (70 tests)
 3. **Swagger Documentation**: Complete OpenAPI 3.0 specs
@@ -616,7 +616,7 @@ php artisan l5-swagger:generate
 9. **Factory Classes**: Test data generation
 10. **Service Layer**: Clean separation of business logic
 
-### 📁 Project Structure
+### Project Structure
 ```
 event-management-system/
 ├── backend/                         # Laravel API Backend
@@ -673,7 +673,7 @@ event-management-system/
 └── README.md                        # This comprehensive guide
 ```
 
-## 🚀 Deployment Notes
+## Deployment Notes
 
 ### Environment Variables
 ```env
