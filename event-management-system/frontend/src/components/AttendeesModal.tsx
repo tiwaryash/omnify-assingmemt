@@ -184,7 +184,7 @@ export function AttendeesModal({ event, isOpen, onClose }: AttendeesModalProps) 
               <p className="font-medium">Error loading attendees</p>
               <p className="text-sm mt-1">{error}</p>
               <Button 
-                onClick={fetchAttendees} 
+                onClick={() => fetchAttendees(currentPage, searchTerm)} 
                 variant="outline" 
                 size="sm" 
                 className="mt-2"
