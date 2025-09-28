@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { format } from 'date-fns';
 import { Calendar, MapPin, Users, Clock } from 'lucide-react';
 import { Event } from '@/lib/api';
 import { Button } from '@/components/ui/button';
@@ -23,8 +22,6 @@ export function EventCard({
   className,
   displayTimezone = 'Asia/Kolkata'
 }: EventCardProps) {
-  const startDate = new Date(event.start_time);
-  const endDate = new Date(event.end_time);
   const isFullyBooked = event.current_attendees >= event.max_capacity;
   const availableSpots = event.max_capacity - event.current_attendees;
 

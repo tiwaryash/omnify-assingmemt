@@ -24,7 +24,7 @@ export function formatDateInTimezone(
     
     const formatted = dateObj.toLocaleString('en-US', options);
     return formatted.replace(/,/g, ' •');
-  } catch (error) {
+  } catch {
     // Fallback to regular formatting if timezone is invalid
     return format(dateObj, formatString);
   }
@@ -92,7 +92,7 @@ export function formatEventTimeRange(
       const endFullFormatted = end.toLocaleString('en-US', startOptions);
       return `${startFormatted.replace(/,/g, ' •')} - ${endFullFormatted.replace(/,/g, ' •')}`;
     }
-  } catch (error) {
+  } catch {
     // Fallback formatting
     return `${format(start, 'MMM dd, yyyy • h:mm a')} - ${format(end, 'h:mm a')}`;
   }
@@ -127,7 +127,7 @@ export function calculateEventDuration(
 export function isEventHappeningNow(
   startTime: string | Date,
   endTime: string | Date,
-  timezone: string
+  _timezone: string
 ): boolean {
   const now = new Date();
   const start = typeof startTime === 'string' ? new Date(startTime) : startTime;

@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { format } from 'date-fns';
-import { CalendarIcon, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CreateEventData, eventApi } from '@/lib/api';
 import { cn } from '@/lib/utils';
@@ -37,7 +37,7 @@ const eventSchema = z.object({
 type EventFormData = z.infer<typeof eventSchema>;
 
 interface EventFormProps {
-  onSuccess?: (event: any) => void;
+  onSuccess?: (event: unknown) => void;
   onCancel?: () => void;
   className?: string;
 }
@@ -83,8 +83,8 @@ export function EventForm({ onSuccess, onCancel, className }: EventFormProps) {
       } else {
         setSubmitError(response.message || 'Failed to create event');
       }
-    } catch (error: any) {
-      setSubmitError(error.message || 'Failed to create event');
+    } catch (error: unknown) {
+      setSubmitError(error instanceof Error ? error.message : 'Failed to create event');
     } finally {
       setIsSubmitting(false);
     }

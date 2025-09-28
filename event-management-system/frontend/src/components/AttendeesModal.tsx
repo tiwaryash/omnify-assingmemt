@@ -35,7 +35,7 @@ export function AttendeesModal({ event, isOpen, onClose }: AttendeesModalProps) 
     setError(null);
     
     try {
-      const params: any = { page, per_page: perPage };
+      const params: { page: number; per_page: number; search?: string } = { page, per_page: perPage };
       if (search.trim()) {
         params.search = search.trim();
       }
@@ -50,8 +50,8 @@ export function AttendeesModal({ event, isOpen, onClose }: AttendeesModalProps) 
       } else {
         setError(response.message || 'Failed to load attendees');
       }
-    } catch (err: any) {
-      setError(err.message || 'Failed to load attendees');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to load attendees');
     } finally {
       setLoading(false);
     }

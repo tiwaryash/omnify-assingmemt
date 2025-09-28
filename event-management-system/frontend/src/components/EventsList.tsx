@@ -43,8 +43,8 @@ export function EventsList({ className }: EventsListProps) {
       } else {
         setError('Failed to load events');
       }
-    } catch (err: any) {
-      setError(err.message || 'Failed to load events');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to load events');
     } finally {
       setLoading(false);
     }
@@ -86,7 +86,7 @@ export function EventsList({ className }: EventsListProps) {
     window.location.reload();
   };
 
-  const handleRegistrationSuccess = (attendee: any) => {
+  const handleRegistrationSuccess = () => {
     // Refresh events to get updated attendee count
     fetchEvents();
     setViewMode('list');

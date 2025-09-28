@@ -19,7 +19,7 @@ type AttendeeFormData = z.infer<typeof attendeeSchema>;
 
 interface AttendeeFormProps {
   event: Event;
-  onSuccess?: (attendee: any) => void;
+  onSuccess?: (attendee: unknown) => void;
   onCancel?: () => void;
   className?: string;
 }
@@ -66,8 +66,8 @@ export function AttendeeForm({ event, onSuccess, onCancel, className }: Attendee
       } else {
         setSubmitError(response.message || 'Failed to register for event');
       }
-    } catch (error: any) {
-      setSubmitError(error.message || 'Failed to register for event');
+    } catch (error: unknown) {
+      setSubmitError(error instanceof Error ? error.message : 'Failed to register for event');
     } finally {
       setIsSubmitting(false);
     }
@@ -205,7 +205,7 @@ export function AttendeeForm({ event, onSuccess, onCancel, className }: Attendee
                 <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
               )}
               <p className="mt-1 text-xs text-gray-500">
-                We'll use this email to send you event updates and confirmations.
+                We&apos;ll use this email to send you event updates and confirmations.
               </p>
             </div>
 
