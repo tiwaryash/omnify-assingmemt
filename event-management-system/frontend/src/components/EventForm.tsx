@@ -7,7 +7,7 @@ import { z } from 'zod';
 import { format } from 'date-fns';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { CreateEventData, eventApi } from '@/lib/api';
+import { CreateEventData, Event, eventApi } from '@/lib/api';
 import { cn } from '@/lib/utils';
 
 // Validation schema
@@ -37,7 +37,7 @@ const eventSchema = z.object({
 type EventFormData = z.infer<typeof eventSchema>;
 
 interface EventFormProps {
-  onSuccess?: (event: unknown) => void;
+  onSuccess?: (event: Event) => void;
   onCancel?: () => void;
   className?: string;
 }

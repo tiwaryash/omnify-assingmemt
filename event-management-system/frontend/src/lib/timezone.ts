@@ -126,8 +126,7 @@ export function calculateEventDuration(
  */
 export function isEventHappeningNow(
   startTime: string | Date,
-  endTime: string | Date,
-  _timezone: string
+  endTime: string | Date
 ): boolean {
   const now = new Date();
   const start = typeof startTime === 'string' ? new Date(startTime) : startTime;
