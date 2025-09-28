@@ -49,7 +49,7 @@ cd backend && php artisan test
 ### 4. Access Frontend
 Open: http://localhost:3000
 
-## 📋 Key URLs
+## Key URLs
 - **Frontend**: http://localhost:3000
 - **API Base**: http://localhost:8000/api
 - **API Docs**: http://localhost:8000/api/documentation
@@ -86,7 +86,7 @@ curl -X POST "http://localhost:8000/api/events/1/register" \
 curl "http://localhost:8000/api/events"
 ```
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 1. **Port conflicts**: Change ports in `.env` or use different terminals
