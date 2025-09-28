@@ -1,4 +1,4 @@
-# 🚀 Quick Start Guide
+# Quick Start Guide
 
 ## One-Command Setup
 
@@ -31,7 +31,7 @@ npm run dev
 ```
 **Frontend runs on**: http://localhost:3000
 
-## 🧪 Verify Installation
+## Verify Installation
 
 ### 1. Test API Health
 ```bash
@@ -55,7 +55,7 @@ Open: http://localhost:3000
 - **API Docs**: http://localhost:8000/api/documentation
 - **Health Check**: http://localhost:8000/api/health
 
-## 🎯 Test the System
+## Test the System
 
 ### Create an Event
 ```bash
@@ -104,7 +104,7 @@ php artisan migrate:fresh
 php artisan l5-swagger:generate
 ```
 
-## ✅ Success Checklist
+## Success Checklist
 - [ ] Backend server running on port 8000
 - [ ] Frontend server running on port 3000
 - [ ] API health check returns success
@@ -113,4 +113,4 @@ php artisan l5-swagger:generate
 - [ ] Can create events via API
 - [ ] Can register attendees via API
 
-**You're ready to go! 🎉**
+**You're ready to go!**
